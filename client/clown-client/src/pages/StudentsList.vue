@@ -7,8 +7,21 @@
 </template>
   
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'StudentsList'  
+  name: 'StudentsList',
+  data: ()=>  ({
+    students: []
+  }),
+  methods: {
+    async getStudents() {
+      const res = await axios.get(
+        `http://localhost3001/students`
+      )
+      this.students = res.data
+    }
+  }
 }
 </script>
 
