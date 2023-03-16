@@ -75,55 +75,55 @@ module.exports = {
       },
       {
         name: 'Physical Comedy',
-        course_code: 'PC201',
+        code: 'PC201',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Juggling',
-        course_code: 'JG101',
+        code: 'JG101',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Balloon Twisting',
-        course_code: 'BT301',
+        code: 'BT301',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Slapstick Comedy',
-        course_code: 'SC401',
+        code: 'SC401',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Clown Make-Up',
-        course_code: 'MU201',
+        code: 'MU201',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Improvisation',
-        course_code: 'IV301',
+        code: 'IV301',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Prop Building',
-        course_code: 'PB101',
+        code: 'PB101',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Silly Songs',
-        course_code: 'SS401',
+        code: 'SS401',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Character Development',
-        course_code: 'CD201',
+        code: 'CD201',
         createdAt: new Date(),
         updatedAt: new Date()
       }
