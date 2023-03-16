@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "clown_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "clown_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "clown_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
