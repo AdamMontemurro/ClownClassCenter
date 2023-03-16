@@ -2,6 +2,9 @@
   <div>
     <h1 class="pageTitle">Students</h1>
     <img id="logoImg" src="https://i.pinimg.com/736x/30/24/e8/3024e8e03debed075156a58ccd9cfd22.jpg" alt="">
+    <div id="studentContainer">
+      
+    </div>
   </div>
 </template>
   

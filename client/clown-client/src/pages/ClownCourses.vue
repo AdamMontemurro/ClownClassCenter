@@ -9,11 +9,34 @@
   </template>
   
   <script>
+  import axios from 'axios'
   import CourseCard from '../components/CourseCard.vue'
   export default {
     name: 'ClownCourses',
     components: {
       CourseCard 
+    },
+    Data: ()=> ({
+      courses: []
+    }),
+    methods: {
+    async getCourses() {
+      const res = await axios.get(
+        `http://localhost3001/course`
+      )
+      this.courses = res.data
     }
+  },
+
   }
   </script>
+
+  <style>
+    h1 {
+    color: #d8572a;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
+  }
+  </style>
