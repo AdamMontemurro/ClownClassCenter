@@ -3,19 +3,21 @@
     <header>
       <NavBar />
     </header>
-  <HomePage />
+    <div>
+      <router-view></router-view>
+    </div>
 </div>
 </template>
 
 <script>
-import HomePage from './pages/HomePage.vue';
+
 import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    HomePage,
     NavBar
+
   }
 }
 </script>
