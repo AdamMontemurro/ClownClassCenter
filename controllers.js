@@ -1,7 +1,7 @@
-const { Student, Course } = require('../models')
+const { Student, Course } = require('./models')
 
 const CreateStudent = async (req, res) => {
-    try {
+    try { console.log(req.body)
         let student = await Student.create(req.body)
         res.send(student)
     } catch (error) {
@@ -38,9 +38,6 @@ const CreateCourse = async (req, res) => {
 //         throw error
 //     }
 // }
-
-
-
 
 module.exports = {
     CreateStudent,
