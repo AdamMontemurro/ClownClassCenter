@@ -1,4 +1,3 @@
-// const { User } = require('../models')
 const { Student, Course } = require('../models')
 
 const CreateStudent = async (req, res) => {
