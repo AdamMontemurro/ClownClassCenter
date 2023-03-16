@@ -4,8 +4,7 @@
     <img id="logoImg" src="https://i.pinimg.com/736x/30/24/e8/3024e8e03debed075156a58ccd9cfd22.jpg" alt="">
     <div id="studentContainer" v-for="student in students" :key="student.id">
       <div class="studentCard">
-        <h4>{{ student.first_name }}</h4>
-        <h4>{{ student.last_name  }}</h4>
+        <h4>{{ student.first_name }} {{ student.last_name  }}</h4>
       </div>
     </div>
   </div>
@@ -22,14 +21,14 @@ export default {
   methods: {
     async getStudents() {
       const res = await axios.get(
-        `http://localhost3001/students`
+        `http://localhost:3001/students`
       )
       this.students = res.data
     }
   },
-  // mounted: {
-  //   getStudents()
-  // }
+  mounted: function() {
+    this.getStudents()
+  }
 }
 </script>
 
