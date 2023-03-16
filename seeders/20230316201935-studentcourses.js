@@ -1,5 +1,6 @@
 'use strict';
 const { Student, Course, sequelize } = require('../models');
+const falso = require('@ngneat/falso');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -17,10 +18,10 @@ module.exports = {
         };
       })
     );
-    return queryInterface.bulkInsert('studentscourses', studentcourses, {});
+    return queryInterface.bulkInsert('studentcourses', studentcourses, {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('students_courses', null, {});
+    await queryInterface.bulkDelete('studentcourses', null, {});
   },
 };
