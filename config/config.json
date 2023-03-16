@@ -2,9 +2,7 @@
   "development": {
     "database": "clown_dev",
     "host": "127.0.0.1",
-    "dialect": "postgres",
-    "username": "postgres",
-    "password": "1234"
+    "dialect": "postgres"
   },
   "test": {
     "database": "clown_dev",
