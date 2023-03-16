@@ -1,7 +1,7 @@
 const { Student, Course } = require('./models')
 
 const CreateStudent = async (req, res) => {
-    try { console.log(req.body)
+    try {
         let student = await Student.create(req.body)
         res.send(student)
     } catch (error) {
@@ -28,20 +28,18 @@ const CreateCourse = async (req, res) => {
     }
 }
 
-// const GetCourse = async (req, res) => {
-//     try {
-//         const course = await Course.findOne({
-//             where: { userId: req.params.userId },
-//         })
-//         res.send(course)
-//     } catch (error) {
-//         throw error
-//     }
-// }
+const GetCourses = async (req, res) => {
+    try {
+        const course = await Course.findAll()
+        res.send(course)
+    } catch (error) {
+        throw error
+    }
+}
 
 module.exports = {
     CreateStudent,
     CreateCourse,
     GetAllStudents,
-    // GetCourses,
+    GetCourses,
 }
