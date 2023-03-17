@@ -17,15 +17,8 @@
     <br>
     <button v-if=!newStudentToggle @click="studentFormToggle">Enroll a Student</button>
     <div id="studentContainer">
-      <div class="studentCard" v-for="student in students" :key="student.id">
-        <h4 @click="clicked(student.id)">{{ student.first_name }} {{ student.last_name }}</h4>
-        
-        <div class='grades' :id=student.id >
-          Class
-          Class
-          Class
-          GPA:
-        </div>
+      <div class="studentCard" v-for="student in students" :key="student.id" @click="navigate(student.id)">
+        <h4>{{ student.first_name }} {{ student.last_name }}</h4>
       </div>
     </div>
   </div>
@@ -54,15 +47,8 @@ export default {
       )
       this.studentGrades = res.data
     },
-    // filterGrades(id){
-    //   let filterGrades = this.studentGrades
-    //   filterGrades = filterGrades((item) => {
-    //     return (item.user_id===id)
-    //   })
-    // },
-    clicked(id) {
-      document.getElementById(`${id}`).style.display
-      console.log('clicked')
+    navigate(id) {
+      this.$router.push(`/students/${id}`)
     },
     async getStudents() {
       const res = await axios.get(

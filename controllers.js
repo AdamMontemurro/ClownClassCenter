@@ -8,7 +8,7 @@ const CreateStudent = async (req, res) => {
         throw error
     }
 }
-const GetAllStudents = async (req,res) => {
+const GetAllStudents = async (req, res) => {
     try {
         const students = await Student.findAll()
         res.send(students)
@@ -39,15 +39,15 @@ const GetCourses = async (req, res) => {
 
 const GetAllStudentsGrades = async (req, res) => {
     try {
-        // let id = parseInt(req.params.student_id)
-      const studentgrade = await StudentCourse.findAll({
-        // where: { student_id: id },
-      })
-      res.send(studentgrade)
+        let id = parseInt(req.params.student_id)
+        const studentgrade = await StudentCourse.findAll({
+            where: { student_id: id },
+        })
+        res.send(studentgrade)
     } catch (error) {
-      throw error
+        throw error
     }
-  }
+}
 
 module.exports = {
     CreateStudent,
