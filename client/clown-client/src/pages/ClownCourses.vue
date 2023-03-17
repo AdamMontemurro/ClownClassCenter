@@ -81,4 +81,16 @@
   object-fit: cover;
   }
 
+  .courseCard{
+    width: 250px;
+    background-color: #d8572a;
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    border: 2px solid black;
+    margin: 1px
+  }
+
   </style>
