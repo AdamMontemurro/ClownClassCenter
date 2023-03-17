@@ -12,6 +12,8 @@
         <br>
       </form>
     </div>
+    <br>
+    <button v-if=!newCourseToggle @click="formToggle">Add a Class</button>
     <div id="courseContainer">
       <div class="courseCard" v-for="course in courses" :key="course.id">
         <h4>{{ course.name }} {{ course.course_code }}</h4>
@@ -36,6 +38,9 @@
     }),
 
     methods: {
+      formToggle() {
+      this.newCourseToggle = !this.newStudentToggle
+    },
     async getCourses() {
       const res = await axios.get(
         `http://localhost:3001/course`
