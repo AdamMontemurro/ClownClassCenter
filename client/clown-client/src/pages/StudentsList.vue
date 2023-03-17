@@ -17,8 +17,8 @@
     <br>
     <button v-if=!newStudentToggle @click="studentFormToggle">Enroll a Student</button>
     <div id="studentContainer">
-      <div class="studentCard" v-for="student in students" :key="student.id" @click="navigate(student.id)">
-        <h4>{{ student.first_name }} {{ student.last_name }}</h4>
+      <div class="studentCard" v-for="student in students" :key="student.id" >
+        <router-link :to="{path: '/students/' + student.id}"> <h4>{{ student.first_name }} {{ student.last_name }}</h4> </router-link>
       </div>
     </div>
   </div>
@@ -47,9 +47,9 @@ export default {
       )
       this.studentGrades = res.data
     },
-    navigate(id) {
-      this.$router.push(`/students/${id}`)
-    },
+    // navigate(id) {
+    //   this.$router.push(`/students/${id}`)
+    // },
     async getStudents() {
       const res = await axios.get(
         `http://localhost:3001/students`
