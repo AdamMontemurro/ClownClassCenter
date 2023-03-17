@@ -15,10 +15,10 @@
       </form>
     </div>
     <br>
-    <button @click="studentFormToggle">Enroll a Student</button>
-    <div id="studentContainer" v-for="student in students" :key="student.id">
-      <div class="studentCard">
-        <h4>{{ student.first_name }} {{ student.last_name  }}</h4>
+    <button v-if=!newStudentToggle @click="studentFormToggle">Enroll a Student</button>
+    <div id="studentContainer">
+      <div class="studentCard" v-for="student in students" :key="student.id">
+        <h4>{{ student.first_name }} {{ student.last_name }}</h4>
       </div>
     </div>
   </div>
@@ -33,10 +33,10 @@ export default {
     students: [],
     newStudentToggle: false,
     newStudent: {
-      first_name:'',
-      last_name:'',
-      email:''
-    }
+      first_name: '',
+      last_name: '',
+      email: ''
+    },
   }),
   methods: {
     async getStudents() {
@@ -46,26 +46,26 @@ export default {
       this.students = res.data
     },
     async addStudent(data) {
-      const res=await axios.post(
+      const res = await axios.post(
         `http://localhost:3001/students`, data
       )
       return res.data
     },
-    studentFormToggle(){
+    studentFormToggle() {
       this.newStudentToggle = !this.newStudentToggle
     },
-    onSubmit(e){
+    onSubmit(e) {
       e.preventDefault()
       this.addStudent(this.newStudent)
       this.newStudent = {
-      first_name:'',
-      last_name:'',
-      email:''
-    }
+        first_name: '',
+        last_name: '',
+        email: ''
+      }
       location.reload()
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.getStudents()
   }
 }
@@ -88,18 +88,11 @@ h1 {
   background-color: #780116;
 }
 
-#studentForm>h4  {
+#studentForm>h4 {
   color: #f7b538
 }
-#submitForm {
-  background-color: #c32f27;
-  color: #f7b538;
-  text-shadow: -1px 1px 2px #000,
-    1px 1px 2px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-    margin-bottom: 1rem;
-}
+
+
 
 
 h4 {
@@ -110,4 +103,23 @@ h4 {
     -1px -1px 0 #000;
 }
 
-</style>z
+#studentContainer {
+  display: flex;
+  align-items: center;
+
+}
+
+.studentCard>h4 {
+  margin-left: 1rem;
+  color: white;
+}
+
+.studentCard {
+  width: 150px;
+  height: 100px;
+  background-color: #d8572a;
+  margin: 1px;
+  display: flex;
+  align-items: center
+}
+</style>
