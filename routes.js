@@ -9,6 +9,8 @@ Router.get('/course', controller.GetCourses)
 
 Router.get('/students', controller.GetAllStudents)
 
-Router.get('/studentcourses/:id', controller.GetAllStudentsGrades)
+Router.get('/students/:id', controller.GetOneStudent)
+
+Router.get('/studentcourses/:student_id', controller.GetAllStudentsGrades)
 
 module.exports = Router
