@@ -84,6 +84,7 @@
     height:428px;
     border:yellow 2px double;
     object-fit: cover;
+    border-radius: 20px;
     }
 
     .course-page {
@@ -100,7 +101,6 @@
     display: flex;
     justify-content: center;
     align-content: center;
-
     }
 
     .course-container {

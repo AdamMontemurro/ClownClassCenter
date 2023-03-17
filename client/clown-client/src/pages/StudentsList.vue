@@ -85,7 +85,8 @@ export default {
 
 <style scoped>
 #logoImg {
-  border: 2px yellow double
+  border: 2px yellow double;
+  border-radius: 20px;
 }
 
 h1 {
