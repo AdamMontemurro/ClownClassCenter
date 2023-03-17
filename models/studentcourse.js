@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   StudentCourse.init(
     {
-      student_id: {
+      student_id: { 
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
