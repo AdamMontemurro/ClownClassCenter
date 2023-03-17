@@ -85,7 +85,8 @@ export default {
 
 <style scoped>
 #logoImg {
-  border: 2px yellow double
+  border: 2px yellow double;
+  border-radius: 20px;
 }
 
 h1 {
@@ -117,9 +118,11 @@ h4 {
 
 #studentContainer {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    overflow-y: auto;
 
 
 }
@@ -130,13 +133,30 @@ h4 {
 }
 
 .studentCard {
-  width: 150px;
-  height: 100px;
   background-color: #d8572a;
-  margin: 1px;
-  display: flex;
-  align-items: center
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
+    border: 2px solid black;
+    border-radius: 20px;
+    transition: .20s;
+    padding: 2vh 2vw;
+    max-width: 200px;
+    max-height: 200px;
+    margin: .5vh .5vw;
 }
 
-
+.studentCard:hover {
+    background-color: rgba(255, 191, 0, 0.687);
+    color: white;
+    }
+a {
+  color:white;
+  text-decoration: none;
+  display: flex;
+  margin-left: 2rem;
+  
+}
 </style>

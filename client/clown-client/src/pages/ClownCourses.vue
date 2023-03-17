@@ -12,6 +12,8 @@
         <br>
       </form>
     </div>
+    <br>
+    <button v-if=!newCourseToggle @click="formToggle">Add a Class</button>
     <div class="course-container">
       <div class="courseCard" v-for="course in courses" :key="course.id">
         <h4>{{ course.name }} {{ course.course_code }}</h4>
@@ -36,6 +38,9 @@
     }),
 
     methods: {
+      formToggle() {
+      this.newCourseToggle = !this.newStudentToggle
+    },
     async getCourses() {
       const res = await axios.get(
         `http://localhost:3001/course`
@@ -79,6 +84,7 @@
     height:428px;
     border:yellow 2px double;
     object-fit: cover;
+    border-radius: 20px;
     }
 
     .course-page {
@@ -95,8 +101,6 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    color: rgb(7, 33, 117);
-    text-shadow: rgb(240, 240, 240) 1px 0 5px;
     }
 
     .course-container {
@@ -128,7 +132,6 @@
     background-color: rgba(255, 191, 0, 0.687);
     color: white;
     }
-  
   
 
   </style>
