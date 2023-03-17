@@ -1,4 +1,4 @@
-const { Student, Course } = require('./models')
+const { Student, Course, StudentCourse } = require('./models')
 
 const CreateStudent = async (req, res) => {
     try {
@@ -37,9 +37,21 @@ const GetCourses = async (req, res) => {
     }
 }
 
+const GetAllStudentsGrades = async (req, res) => {
+    try {
+      const studentgrade = await StudentCourse.findAll({
+        where: { student_id: req.params.student_id },
+      })
+      res.send(studentgrade)
+    } catch (error) {
+      throw error
+    }
+  }
+
 module.exports = {
     CreateStudent,
     CreateCourse,
     GetAllStudents,
     GetCourses,
+    GetAllStudentsGrades
 }

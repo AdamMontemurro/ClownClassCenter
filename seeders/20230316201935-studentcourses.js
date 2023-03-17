@@ -18,7 +18,7 @@ module.exports = {
         };
       })
     );
-    return queryInterface.bulkInsert('students_courses', student_courses, {});
+    return queryInterface.bulkInsert('students_courses', studentcourses, {});
   },
 
   async down(queryInterface, Sequelize) {

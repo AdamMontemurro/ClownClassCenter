@@ -5,6 +5,7 @@
     "dialect": "postgres",
     "username": "postgres",
     "password": "1234"
+
   },
   "test": {
     "database": "clown_dev",
