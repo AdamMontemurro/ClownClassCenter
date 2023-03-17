@@ -27,4 +27,4 @@
 [Will Szeto]()<br>
 [Josh Curtis]()<br>
 [Adam Montemurro](https://github.com/AdamMontemurro)<br>
-[Austin Taylor](https://github.com/austin-rt) <img src="https://i.imgur.com/mkwGGRb.png" width="3%" height="3%">
+[Austin Taylor](https://github.com/austin-rt) <img src="https://i.imgur.com/mkwGGRb.png" width="1%" height="1%">
