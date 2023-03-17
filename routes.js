@@ -9,4 +9,6 @@ Router.get('/course', controller.GetCourses)
 
 Router.get('/students', controller.GetAllStudents)
 
+Router.get('/studentcourses/:student_id', controller.GetAllStudentsGrades)
+
 module.exports = Router
