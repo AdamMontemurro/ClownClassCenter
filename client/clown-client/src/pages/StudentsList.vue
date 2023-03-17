@@ -19,7 +19,8 @@
     <div id="studentContainer">
       <div class="studentCard" v-for="student in students" :key="student.id">
         <h4 @click="clicked(student.id)">{{ student.first_name }} {{ student.last_name }}</h4>
-        <div class='grades' :id=`grade${student.id}` >
+        
+        <div class='grades' :id=student.id >
           Class
           Class
           Class
@@ -43,9 +44,22 @@ export default {
       last_name: '',
       email: ''
     },
-    grades: false
+    grades: false,
+    studentGrades:[]
   }),
   methods: {
+    async getStudentsCourses() {
+      const res = await axios.get(
+        `http://localhost:3001/studentcourses`
+      )
+      this.studentGrades = res.data
+    },
+    // filterGrades(id){
+    //   let filterGrades = this.studentGrades
+    //   filterGrades = filterGrades((item) => {
+    //     return (item.user_id===id)
+    //   })
+    // },
     clicked(id) {
       document.getElementById(`${id}`).style.display
       console.log('clicked')
@@ -78,6 +92,7 @@ export default {
   },
   mounted: function () {
     this.getStudents()
+    this.getStudentsCourses()
   }
 }
 </script>
@@ -117,6 +132,9 @@ h4 {
 #studentContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  
+
 
 }
 

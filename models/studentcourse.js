@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       grade: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     {
       sequelize,
