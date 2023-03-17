@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-
+  async up(queryInterface, Sequelize) {
     let students = [
       {
         first_name: 'John',
@@ -11,7 +10,6 @@ module.exports = {
         email: 'johndoe@example.com',
         createdAt: new Date(),
         updatedAt: new Date()
-        
       },
       {
         first_name: 'Jane',
@@ -19,7 +17,6 @@ module.exports = {
         email: 'janedoe@example.com',
         createdAt: new Date(),
         updatedAt: new Date()
-
       },
       {
         first_name: 'Bob',
@@ -77,13 +74,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       }
-    ];
+    ]
 
     await queryInterface.bulkInsert('students', students)
-
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete('students')
   }
-};
+}

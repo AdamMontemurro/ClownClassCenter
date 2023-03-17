@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -63,69 +63,77 @@ module.exports = {
         course_code: 'PT101',
         createdAt: new Date(),
         updatedAt: new Date()
-      },
-
-    ];
+      }
+    ]
 
     const clownSchoolCourses = [
       {
-        name: "Clown Fundamentals", course_code: "CF101",
+        name: 'Clown Fundamentals',
+        course_code: 'CF101',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Physical Comedy", course_code: "PC201",
+        name: 'Physical Comedy',
+        course_code: 'PC201',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Juggling", course_code: "JG101",
+        name: 'Juggling',
+        course_code: 'JG101',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Balloon Twisting", course_code: "BT301",
+        name: 'Balloon Twisting',
+        course_code: 'BT301',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Slapstick Comedy", course_code: "SC401",
+        name: 'Slapstick Comedy',
+        course_code: 'SC401',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Clown Make-Up", course_code: "MU201",
+        name: 'Clown Make-Up',
+        course_code: 'MU201',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Improvisation", course_code: "IV301",
+        name: 'Improvisation',
+        course_code: 'IV301',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Prop Building", course_code: "PB101",
+        name: 'Prop Building',
+        course_code: 'PB101',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Silly Songs", course_code: "SS401",
+        name: 'Silly Songs',
+        course_code: 'SS401',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: "Character Development", course_code: "CD201",
+        name: 'Character Development',
+        course_code: 'CD201',
         createdAt: new Date(),
         updatedAt: new Date()
       }
-    ];
-
+    ]
 
     await queryInterface.bulkInsert('courses', courses)
-    await queryInterface.bulkInsert('courses', clownSchoolCourses )
+    await queryInterface.bulkInsert('courses', clownSchoolCourses)
   },
 
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete('courses')
   }
-};
+}
