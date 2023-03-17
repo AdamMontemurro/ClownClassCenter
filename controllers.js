@@ -8,7 +8,7 @@ const CreateStudent = async (req, res) => {
         throw error
     }
 }
-const GetAllStudents = async (req,res) => {
+const GetAllStudents = async (req, res) => {
     try {
         const students = await Student.findAll()
         res.send(students)
@@ -57,9 +57,9 @@ const GetAllStudentsGrades = async (req, res) => {
       })
       res.send(studentgrade)
     } catch (error) {
-      throw error
+        throw error
     }
-  }
+}
 
 
 
