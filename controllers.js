@@ -39,8 +39,9 @@ const GetCourses = async (req, res) => {
 
 const GetAllStudentsGrades = async (req, res) => {
     try {
+        // let id = parseInt(req.params.student_id)
       const studentgrade = await StudentCourse.findAll({
-        where: { student_id: req.params.student_id },
+        // where: { student_id: id },
       })
       res.send(studentgrade)
     } catch (error) {
