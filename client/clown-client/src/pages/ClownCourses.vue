@@ -100,8 +100,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    color: rgb(7, 33, 117);
-    text-shadow: rgb(240, 240, 240) 1px 0 5px;
+
     }
 
     .course-container {
@@ -133,7 +132,6 @@
     background-color: rgba(255, 191, 0, 0.687);
     color: white;
     }
-  
   
 
   </style>
