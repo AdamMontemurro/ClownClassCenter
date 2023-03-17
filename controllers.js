@@ -17,6 +17,18 @@ const GetAllStudents = async (req,res) => {
     }
 }
 
+const GetOneStudent = async (req, res) => {
+    try {
+        let id = parseInt(req.params.id)
+      const student = await Student.findAll({
+        where: { id: id },
+      })
+      res.send(student)
+    } catch (error) {
+      throw error
+    }
+  }
+
 
 
 const CreateCourse = async (req, res) => {
@@ -39,9 +51,9 @@ const GetCourses = async (req, res) => {
 
 const GetAllStudentsGrades = async (req, res) => {
     try {
-        // let id = parseInt(req.params.student_id)
+        let id = parseInt(req.params.student_id)
       const studentgrade = await StudentCourse.findAll({
-        // where: { student_id: id },
+        where: { student_id: id },
       })
       res.send(studentgrade)
     } catch (error) {
@@ -49,10 +61,13 @@ const GetAllStudentsGrades = async (req, res) => {
     }
   }
 
+
+
 module.exports = {
     CreateStudent,
     CreateCourse,
     GetAllStudents,
     GetCourses,
-    GetAllStudentsGrades
+    GetAllStudentsGrades,
+    GetOneStudent
 }
