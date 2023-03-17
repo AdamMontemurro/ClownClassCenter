@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>TEST</h1>
+    <h1>{{ student }}</h1>
   </div>
   <div v-for="x of student" :key="x.id">
       {{course_id}} {{x.grade}}
@@ -14,28 +14,34 @@ import axios from 'axios'
 export default {
   name: 'StudentGrades',
   data: () => ({
-    student: {},
-    courses: []
+    student: [],
+    courses: {}
   }),
   methods: {
     async getStudent(id) {
       const res = await axios.get(
         `http://localhost:3001/students/${id}`
       )
+      console.log(res.data)
       this.student = res.data
-      console.log(id)
   },
   async getCourses() {
       const res = await axios.get(
         `http://localhost:3001/course`
       )
       this.courses = res.data
-      console.log('object')
     },
-  mounted: function () {
+    async getStudentsCourses() {
+      const res = await axios.get(
+        `http://localhost:3001/studentcourses`
+      )
+      this.studentGrades = res.data
+    },
+  },
+  mounted: function() {
     this.getStudent(2)
     this.getCourses()
   }
-  }
+  
 }
 </script>

@@ -52,6 +52,7 @@ const GetCourses = async (req, res) => {
 const GetAllStudentsGrades = async (req, res) => {
     try {
         let id = parseInt(req.params.student_id)
+        console.log(id)
       const studentgrade = await StudentCourse.findAll({
         where: { student_id: id },
       })
