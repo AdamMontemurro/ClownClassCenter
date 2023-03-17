@@ -4,7 +4,7 @@
 ### Created March 2023
 #### By 
 - Will Szeto [Github](https://github.com/wszeto11) || [Linkedin](https://www.linkedin.com/in/will-szeto-a449b021a/) 
-- Josh Curtis [Github](https://github.com/jcurti2) || [Linkedin](https://www.linkedin.com/in/will-szeto-a449b021a/) 
+- Josh Curtis [Github](https://github.com/jcurti2) || [Linkedin](https://www.linkedin.com/in/josh-curtis08/) 
 - Adam Montemurro [Github](https://github.com/AdamMontemurro) || [Linkedin](https://www.linkedin.com/in/adam-montemurro/) 
 ***
 
