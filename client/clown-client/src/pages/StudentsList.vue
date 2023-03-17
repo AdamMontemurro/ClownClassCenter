@@ -18,7 +18,13 @@
     <button v-if=!newStudentToggle @click="studentFormToggle">Enroll a Student</button>
     <div id="studentContainer">
       <div class="studentCard" v-for="student in students" :key="student.id">
-        <h4>{{ student.first_name }} {{ student.last_name }}</h4>
+        <h4 @click="clicked(student.id)">{{ student.first_name }} {{ student.last_name }}</h4>
+        <div class='grades' :id=`grade${student.id}` >
+          Class
+          Class
+          Class
+          GPA:
+        </div>
       </div>
     </div>
   </div>
@@ -37,8 +43,13 @@ export default {
       last_name: '',
       email: ''
     },
+    grades: false
   }),
   methods: {
+    clicked(id) {
+      document.getElementById(`${id}`).style.display
+      console.log('clicked')
+    },
     async getStudents() {
       const res = await axios.get(
         `http://localhost:3001/students`
@@ -122,4 +133,6 @@ h4 {
   display: flex;
   align-items: center
 }
+
+
 </style>
